@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import django_heroku
 from pathlib import Path
 
 
@@ -123,6 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+LOGIN_REDIRECT_URL = '/vacations/'
 LOGOUT_REDIRECT_URL = '/'
 
 # Default primary key field type
@@ -135,5 +136,9 @@ import environ
 environ.Env()
 environ.Env.read_env()
 
-import django_heroku
+
+# heroku
+
 django_heroku.settings(locals())
+
+
